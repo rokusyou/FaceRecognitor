@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- Form
+  ================================================== -->
+<div class="col-md-6">
+        <h3>入力画像</h3>
+        <form  id="stage" action="/upload" class="dropzone text-center">
+          <h4 id="drag_msg" class="dz-default dz-message">画像をここにドラッグ<br>または<br>ここをタップして画像を指定</h4>
+        </form>
+        <br>
+        <button id="clear" class="btn btn-default" type="button">クリア</button>
+</div>
+
+<form method="post" action="/send" enctype="multipart/form-data">
+  <input type="file" id="img_file" name="img_file" class="col-sm-4">
+  <input type="submit" value="送信" class="btn">
+</form>
+  {% if img_url %}
+<p><img src="{{ img_url }}"></p>
+  {% endif %}
+{% include "h1_particle.html" %}
+{% include "links.html" %}
+
+{% endblock %}
+
