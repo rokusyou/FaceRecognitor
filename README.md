@@ -1,1 +1,1 @@
-# FaceRecognitor
+# FaceClassifier
